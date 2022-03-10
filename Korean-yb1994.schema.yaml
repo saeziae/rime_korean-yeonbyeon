@@ -1,0 +1,59 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: Korean-yb1994
+  name: 언문-연변1994
+  version: "1.0"
+  author:
+    - sanjeon<i@estela.cn>
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [조, Eng]
+  - name: full_shape
+    states: [반각, 전각]
+  - name: ascii_punct
+    states: [구두, 문장]
+    reset: 1
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - r10n_translator
+    - table_translator
+  filters:
+    - uniquifier
+
+menu:
+  page_size: 6
+
+speller:
+  alphabet: 'qwertyuiopasdfghjklzxcvbnm'
+  delimiter: " '"
+
+translator:
+  dictionary: Korean-yb1994
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
