@@ -46,7 +46,7 @@ menu:
   page_size: 6
 
 speller:
-  alphabet: 'qwertyuiopasdfghzklzxcvbnm'
+  alphabet: 'qwertyuiopasdfghjklzxcvbnm'
   delimiter: " '"
 
 translator:
